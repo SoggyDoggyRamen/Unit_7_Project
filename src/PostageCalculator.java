@@ -13,7 +13,7 @@ public class PostageCalculator {
         if (weight > 40) {
             cost += Math.floor(Math.floor(weight - 40)/0.1) * 0.10;
         }
-        return cost;
+        return Math.round(cost * 100.0)/100.0;
     }
 
     public double calculatePostage(Address address1, Address address2, double weight, double length, double width, double height) {
@@ -30,7 +30,7 @@ public class PostageCalculator {
         if (weight > 40) {
             cost += Math.floor(Math.floor(weight - 40)/0.1) * 0.10;
         }
-        return cost;
+        return Math.round(cost * 100.0)/100.0;
     }
 
     public double calculatePostage(Package pack) {
@@ -47,6 +47,6 @@ public class PostageCalculator {
         if (pack.getWeight() > 40) {
             cost += Math.floor(Math.floor(pack.getWeight() - 40)/0.1) * 0.10;
         }
-        return cost;
+        return Math.round(cost * 100.0)/100.0;
     }
 }
